@@ -1,0 +1,17 @@
+#!/usr/bin/env -S node
+
+const crypto = require("node:crypto");
+const { createInterface } = require("node:readline");
+const { stdout, stdin } = require("node:process");
+
+const rl = createInterface({ input: stdin, output: stdout })
+
+async function hash() {
+  const answer = rl.question('Input:', (answer) => {
+    const hash = crypto.createHash('sha256').update(answer).digest('hex');
+    console.log('The generated hash is below this line');
+    console.log(hash);
+    rl.close()
+    return hash;
+  })
+}
