@@ -1,2 +1,2 @@
 # MableToolkit
-Common-use and frecuently used scripts
+Common-use and frecuently used scripts and configuration templates
